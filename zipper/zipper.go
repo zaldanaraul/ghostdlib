@@ -109,28 +109,5 @@ func (z* Zipper) Zip(src string, dst string) (error) {
     return newErr(err, "Error while walking through path %v", src)
   }
 
-  // Read contents of src
-  /*log.Printf("Reading contents of %v\n", src)
-  srcF, err := os.Open(src)
-  if err != nil {
-    return newErr(err, "Unable to read contents of %v", src)
-  }
-  srcReader := bufio.NewReader(srcF)
-  srcContentsBytes, err := io.ReadAll(srcF)
-  if err != nil {
-    return newErr(err, "Unable to read contents of %v", src)
-  }
-  log.Printf("Contents of src: %v\n", string(srcContentsBytes))
-
-  // write file to zip archive
-  srcPathBase := filepath.Base(src)
-  w, err := zipWriter.Create(srcPathBase)
-  if err != nil {
-    return newErr(err, "Unable to create file at %v", dst)
-  }
-  io.Copy(w, srcReader)
-  w.Write(srcContentsBytes)
-  */
-
   return nil
 }
